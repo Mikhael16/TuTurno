@@ -1,0 +1,1 @@
+Archivos informativos sobre el desarrollo de cada parte del proyecto a nivel software

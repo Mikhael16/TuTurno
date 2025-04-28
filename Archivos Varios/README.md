@@ -1,0 +1,1 @@
+Cartas, querys sql, entregables, ppt del curso, etc
