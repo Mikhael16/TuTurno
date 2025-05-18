@@ -5,12 +5,17 @@ CREATE TABLE Curso (
 CREATE TABLE Seccion (
     Letra CHAR(1) PRIMARY KEY
 );
-CREATE TABLE CursoSeccion (
-    ID SERIAL PRIMARY KEY,
-    Codigo_Curso VARCHAR(10) REFERENCES Curso(Codigo),
-    Letra_Seccion CHAR(1) REFERENCES Seccion(Letra),
-    Relativo VARCHAR(10) NOT NULL,
-    UNIQUE (Codigo_Curso, Letra_Seccion)
+create table public."CursoSeccion" (
+  "ID" SERIAL primary key,
+  "Codigo_Curso" VARCHAR(10) not null
+                      references public."Curso"("Codigo"),
+  "Letra_Seccion" CHAR(1) not null
+                      references public."Seccion"("Letra"),
+  "Relativo" VARCHAR(10) not null,
+  constraint uniq_curseseccion_curso_seccion_ciclo
+    unique ("Codigo_Curso",
+"Letra_Seccion",
+"Relativo")
 );
 
 
