@@ -1,14 +1,10 @@
-create table public."CursoSeccion" (
-  "ID" SERIAL primary key,
-  "Codigo_Curso" VARCHAR(10) not null
-                      references public."Curso"("Codigo"),
-  "Letra_Seccion" CHAR(1) not null
-                      references public."Seccion"("Letra"),
-  "Relativo" VARCHAR(10) not null,
-  constraint uniq_curseseccion_curso_seccion_ciclo
-    unique ("Codigo_Curso",
-"Letra_Seccion",
-"Relativo")
+DROP TABLE IF EXISTS cursoseccion;
+create table cursoseccion (
+  id serial primary key,
+  codigo_curso varchar(10) not null references curso(codigo),
+  letra_seccion char(1) not null references seccion(letra),
+  relativo varchar(10) not null,
+  constraint uniq_curseseccion_curso_seccion_ciclo unique (codigo_curso, letra_seccion, relativo)
 );
 
 INSERT INTO cursoseccion (codigo_curso,letra_seccion,relativo) VALUES
