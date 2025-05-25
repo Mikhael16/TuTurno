@@ -2,10 +2,11 @@ DROP TABLE IF EXISTS cursoseccion;
 create table cursoseccion (
   id serial primary key,
   codigo_curso varchar(10) not null references curso(codigo),
-  letra_seccion char(1) not null references seccion(letra),
+  letra_seccion char(1) references seccion(letra),
   relativo varchar(10) not null,
   constraint uniq_curseseccion_curso_seccion_ciclo unique (codigo_curso, letra_seccion, relativo)
 );
+
 
 INSERT INTO cursoseccion (codigo_curso,letra_seccion,relativo) VALUES
 	 ('BEF01','U','251'),
