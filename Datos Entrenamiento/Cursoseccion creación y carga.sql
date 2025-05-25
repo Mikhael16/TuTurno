@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE TABLE public.cursoseccion (
 	id serial4 NOT NULL,
 	codigo_curso varchar(10) NULL,
@@ -5,6 +6,15 @@ CREATE TABLE public.cursoseccion (
 	relativo varchar(10) NOT NULL,
 	CONSTRAINT cursoseccion_pkey PRIMARY KEY (id),
 	CONSTRAINT uniq_curseseccion_curso_seccion_ciclo UNIQUE (codigo_curso, letra_seccion, relativo)
+=======
+DROP TABLE IF EXISTS cursoseccion;
+create table cursoseccion (
+  id serial primary key,
+  codigo_curso varchar(10) not null references curso(codigo),
+  letra_seccion char(1) references seccion(letra),
+  relativo varchar(10) not null,
+  constraint uniq_curseseccion_curso_seccion_ciclo unique (codigo_curso, letra_seccion, relativo)
+>>>>>>> 04294672f6a7cba9dd39aaf419dbfcc565c86fe4
 );
 
 

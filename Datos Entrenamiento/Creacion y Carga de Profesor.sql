@@ -1,6 +1,7 @@
-CREATE TABLE Profesor (
-    ID SERIAL PRIMARY KEY,
-    Nombre VARCHAR(255) NOT NULL
+CREATE TABLE profesor (
+	codprofesor serial4 NOT NULL,
+	nombre varchar(255) NOT NULL,
+	CONSTRAINT profesor_pkey PRIMARY KEY (codprofesor)
 );
 
 INSERT INTO profesor (nombre) VALUES
