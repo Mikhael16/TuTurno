@@ -227,3 +227,8 @@ INSERT INTO curso (codigo,nombre) VALUES
 	 ('ST253','TECNICAS DE DOCUMENTACION Y ARCHIVOS'),
 	 ('TP224','PROCESOS INDUSTRIALES II'),
 	 ('TP313','DISEÑO GRAFICO');
+
+INSERT INTO curso (codigo, nombre)
+VALUES ('BIE01', 'horas extracurriculares');
+INSERT INTO curso (codigo, nombre)
+VALUES ('BAE01', 'segundo idioma');
